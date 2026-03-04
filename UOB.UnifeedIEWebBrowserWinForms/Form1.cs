@@ -1,4 +1,4 @@
-﻿//#define BETA
+﻿#define ACCEPT
 namespace UOL.UnifeedIEWebBrowserWinForms
 {
 	using System;
@@ -20,14 +20,18 @@ namespace UOL.UnifeedIEWebBrowserWinForms
 	public partial class Form1 : Form
 	{
 		public const string ClientId = "2BA_DEMOAPPS_PKCE";
-#if ALPHA
+#if LOCAL
+		public const string AuthorizeBaseUrl = "https://authorize.alpha.2ba.nl";
+		public const string UnifeedBaseUrl = "https://localhost:44337/";
+		public const string ApiBaseUrlNew = "https://apix.alpha.2ba.nl";
+#elif ALPHA
 		public const string AuthorizeBaseUrl = "https://authorize.alpha.2ba.nl";
 		public const string UnifeedBaseUrl = "https://uol-unifeed.alpha.2ba.nl";
 		public const string ApiBaseUrlNew = "https://apix.alpha.2ba.nl";
-#elif BETA
-		public const string AuthorizeBaseUrl = "https://authorize.beta.2ba.nl";
-		public const string UnifeedBaseUrl = "https://uol-unifeed.beta.2ba.nl";
-		public const string ApiBaseUrlNew = "https://apix.beta.2ba.nl";
+#elif ACCEPT
+		public const string AuthorizeBaseUrl = "https://authorize.accept.2ba.nl";
+		public const string UnifeedBaseUrl = "https://uol-unifeed.accept.2ba.nl";
+		public const string ApiBaseUrlNew = "https://apix.accept.2ba.nl";
 #else
 		public const string AuthorizeBaseUrl = "https://authorize.2ba.nl";
 		public const string UnifeedBaseUrl = "https://uol-unifeed.2ba.nl";
